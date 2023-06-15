@@ -1,13 +1,24 @@
-import { Card, Form, Input, Checkbox, Button } from "antd";
+import { Card, Form, Input, Checkbox, Button, message } from "antd";
 import logo from "@/assets/logo.png";
 import "./index.scss";
+import { useStore } from '@/store'
 
-const onFinish = values => {
-    console.log(values)
-  }
+
   
 
 const Login = () => {
+  
+  let {loginStore} = useStore()
+
+  const onFinish = async (values)=>{
+    let {mobile,code} = values
+    try {
+      
+    } catch (e) {
+      message.error(e.respo)
+    }
+  }
+
   return (
     <div className="login">
       <Card className="login-container">
